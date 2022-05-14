@@ -15,19 +15,27 @@
         <form class="uk-grid-small uk-margin" th:object="${orderAddress}" uk-grid method="post"
               th:href="@{/menu/order/{pizzaId}(pizzaId=${pizza.id})}">
             <div class="uk-width-1-2">
-                <input class="uk-input" type="text"  placeholder="Imię" th:field="*{firstName}">
+                <input class="uk-input" type="text"  placeholder="Imię" th:field="*{firstName}"
+                th:errorclass="uk-form-danger">
+                <span th:if="${#fields.hasErrors('firstName')}" class="uk-text-small uk-text-danger">Musi byc od 2 do 60 znaków</span>
             </div>
             <div class="uk-width-1-2">
-                <input class="uk-input" type="text" placeholder="Nazwisko" th:field="*{lastName}">
+                <input class="uk-input" type="text" placeholder="Nazwisko" th:field="*{lastName}" th:errorclass="uk-form-danger">
+                <span th:if="${#fields.hasErrors('lastName')}" class="uk-text-small uk-text-danger">Musi byc od 2 do 60 znaków</span>
             </div>
             <div class="uk-width-1-1">
-                <input class="uk-input" type="text" placeholder="Ulica" th:field="*{street}">
+                <input class="uk-input" type="text" placeholder="Ulica" th:field="*{street}" th:errorclass="uk-form-danger">
+                <span th:if="${#fields.hasErrors('street')}" class="uk-text-small uk-text-danger">Musi byc od 2 do 60 znaków</span>
             </div>
             <div class="uk-width-1-2">
-                <input class="uk-input" type="text" placeholder="Kod pocztowy" th:field="*{postalCode}">
+                <input class="uk-input" type="text" placeholder="Kod pocztowy" th:field="*{postalCode}"
+                       th:errorclass="uk-form-danger">
+                <span th:if="${#fields.hasErrors('postalCode')}" class="uk-text-small uk-text-danger">Musi byc 6 znaków</span>
             </div>
             <div class="uk-width-1-2">
-                <input class="uk-input" type="text" placeholder="Miasto" th:field="*{city}">
+                <input class="uk-input" type="text" placeholder="Miasto" th:field="*{city}"
+                       th:errorclass="uk-form-danger">
+                <span th:if="${#fields.hasErrors('city')}" class="uk-text-small uk-text-danger">Musi byc od 2 do 60 znaków</span>
             </div>
             <div class="uk-width-1-1">
                 <input type="submit" class="uk-button uk-button-primary uk-width-1-1" value="Zamów">
