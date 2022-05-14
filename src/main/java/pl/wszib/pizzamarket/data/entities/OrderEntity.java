@@ -37,7 +37,7 @@ public class OrderEntity {
         return orderAddressId;
     }
 
-    public void setOrderAddressId(OrderAddressEntity orderAddressId) {
+    public void setOrderAddress(OrderAddressEntity orderAddressId) {
         this.orderAddressId = orderAddressId;
     }
 }
